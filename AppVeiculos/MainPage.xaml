@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppVeiculos.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            BackgroundColor="LightGray">
+
+            <Image
+                Source="car.png"
+                HeightRequest="60"
+                WidthRequest="60"/>
+
+            <Label
+                x:Name="lblLogin"
+                Text="Veiculos"
+                HorizontalTextAlignment="Center"
+                TextColor="Black"/>
+
+            <Label
+                x:Name="lblEmail"
+                Text="Email"
+                TextColor="Black"/>
+            <Entry
+                x:Name="etrEmail"
+                TextColor="Black"/>
+
+            <Label
+                x:Name="lblSenha"
+                Text="Senha"
+                TextColor="Black"/>
+            <Entry
+                x:Name="etrSenha"
+                TextColor="Black"/>
+
+            <Button
+                x:Name="btnEntrar"
+                Text="Entrar"
+                BackgroundColor="IndianRed"
+                TextColor="White"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
