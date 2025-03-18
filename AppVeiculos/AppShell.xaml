@@ -14,12 +14,14 @@
     <FlyoutItem
         FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
-             Title="Login"
-             ContentTemplate="{DataTemplate local:MainPage}"
-             Route="MainPage" />
+            Title="Login"
+            FlyoutIcon="user.png"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
 
         <ShellContent
             Title="Cadastro"
+            FlyoutIcon="user.png"
             ContentTemplate="{DataTemplate local:Cadastro}"
             Route="Cadastro"/>
 
