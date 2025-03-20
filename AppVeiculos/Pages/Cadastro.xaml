@@ -5,7 +5,8 @@
              Title="Cadastro">
     <VerticalStackLayout
         Spacing="20"
-        Padding="20">
+        Padding="20"
+        BackgroundColor="LightGray">
         <Image
              Source="car.png"
              HeightRequest="60"

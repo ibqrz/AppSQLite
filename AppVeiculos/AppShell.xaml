@@ -9,7 +9,9 @@
     Title="AppVeiculos"
     Shell.BackgroundColor="IndianRed"
     Shell.FlyoutBackgroundColor="IndianRed"
-    Shell.TitleColor="White">
+    Shell.TitleColor="White"
+    Shell.ForegroundColor="White"
+    Shell.UnselectedColor="White">
 
     <FlyoutItem
         FlyoutDisplayOptions="AsMultipleItems">
@@ -24,6 +26,18 @@
             FlyoutIcon="user.png"
             ContentTemplate="{DataTemplate local:Cadastro}"
             Route="Cadastro"/>
+
+        <ShellContent
+            Title="Adicionar"
+            FlyoutIcon="user.png"
+            ContentTemplate="{DataTemplate local:Adicionar}"
+            Route="Adicionar"/>
+
+        <ShellContent
+            Title="Veículos"
+            FlyoutIcon="user.png"
+            ContentTemplate="{DataTemplate local:Veiculos}"
+            Route="Veiculos"/>
 
     </FlyoutItem>
 </Shell>
