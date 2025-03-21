@@ -3,10 +3,45 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppVeiculos.AddMarca"
              Title="AddMarca">
-    <VerticalStackLayout>
-        <Label 
-            Text=""
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="30"
+            Padding="30">
+
+            <Image
+                Source="racingcar.png"
+                HeightRequest="100"
+                WidthRequest="110"/>
+
+            <Label 
+                Text="Marca"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                TextColor="White"/>
+
+            <Label
+                x:Name="lblMarca"
+                Text="Marca"
+                TextColor="White"/>
+            <Entry
+                x:Name="etrMarca"
+                TextColor="White"/>
+
+            <Label
+                x:Name="lblOBSMarca"
+                Text="Observações"
+                TextColor="White"/>
+            <Editor
+                x:Name="edtOBSMarca"
+                TextColor="White"/>
+
+            <Button
+                x:Name="btnAddMarca"
+                Text="Adicionar"
+                TextColor="White"
+                BackgroundColor="Maroon"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>

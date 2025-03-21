@@ -8,23 +8,10 @@
             Padding="30,0"
             Spacing="30">
 
-            <Label
-                x:Name="lblCadastrar"
-                Text="Cadastre-se"
-                TextColor="White"
-                HorizontalTextAlignment="End"
-                NavigationPage.BackButtonTitle="btnCadastroOnClcked"/>
-
             <Image
-                Source="car.png"
-                HeightRequest="60"
-                WidthRequest="60"/>
-
-            <Label
-                x:Name="lblLogin"
-                Text="Veiculos"
-                HorizontalTextAlignment="Center"
-                TextColor="White"/>
+                Source="racingcar.png"
+                HeightRequest="100"
+                WidthRequest="110"/>
 
             <Label
                 x:Name="lblEmail"

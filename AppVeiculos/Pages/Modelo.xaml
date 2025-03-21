@@ -3,7 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppVeiculos.Modelo"
              Title="Modelo">
-    <VerticalStackLayout>
+    <VerticalStackLayout
+        Padding="30"
+        Spacing="30">
         <Label 
             Text=""
             VerticalOptions="Center" 
@@ -12,6 +14,8 @@
         <Button
             x:Name="btAddModelo"
             Text="Adicionar"
+            TextColor="White"
+            BackgroundColor="Maroon"
             Clicked="btnAddModeloOnClicked"/>
         
     </VerticalStackLayout>
