@@ -6,4 +6,10 @@ public partial class Veiculos : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private async void btnAddVeiculoOnClicked(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new AddVeiculo());
+	}
+
 }
