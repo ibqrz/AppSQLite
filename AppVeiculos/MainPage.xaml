@@ -6,11 +6,10 @@
     <ScrollView>
         <VerticalStackLayout
             Padding="30,0"
-            Spacing="30"
-            BackgroundColor="LightGray">
+            Spacing="30">
 
             <Image
-                Source="car.png"
+                Source="racingcar.png"
                 HeightRequest="60"
                 WidthRequest="60"/>
 
@@ -18,28 +17,20 @@
                 x:Name="lblLogin"
                 Text="Veiculos"
                 HorizontalTextAlignment="Center"
-                TextColor="Black"/>
-
-            <Label
-                x:Name="lblEmail"
-                Text="Email"
-                TextColor="Black"/>
-            <Entry
-                x:Name="etrEmail"
-                TextColor="Black"/>
-
-            <Label
-                x:Name="lblSenha"
-                Text="Senha"
-                TextColor="Black"/>
-            <Entry
-                x:Name="etrSenha"
-                TextColor="Black"/>
+                TextColor="White"/>
 
             <Button
-                x:Name="btnEntrar"
-                Text="Entrar"
-                BackgroundColor="IndianRed"
+                x:Name="btnLogin"
+                Text="Login"
+                Clicked="btnLoginOnClicked"
+                BackgroundColor="Maroon"
+                TextColor="White"/>
+
+            <Button
+                x:Name="btnCadastrar"
+                Text="Cadastrar-se"
+                Clicked="btnCadastrarOnClicked"
+                BackgroundColor="Maroon"
                 TextColor="White"/>
 
         </VerticalStackLayout>

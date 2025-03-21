@@ -5,45 +5,53 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:AppVeiculos"
     Shell.FlyoutBehavior="Flyout"
-    Shell.TabBarIsVisible="False"
+    Shell.TabBarIsVisible="True"
     Title="AppVeiculos"
-    Shell.BackgroundColor="IndianRed"
-    Shell.FlyoutBackgroundColor="IndianRed"
+    Shell.BackgroundColor="Maroon"
+    Shell.FlyoutBackgroundColor="Maroon"
     Shell.TitleColor="White"
+    Shell.DisabledColor="White"
     Shell.ForegroundColor="White"
     Shell.UnselectedColor="White">
 
-    <FlyoutItem
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout
+            Spacing="20"
+            Padding="20">
+            <Image
+                Source="car2.png"
+                HeightRequest="100"
+                WidthRequest="100"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+        
+            <FlyoutItem
         FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
-            Title="Login"
-            FlyoutIcon="user.png"
+            Title="Home"
+            Icon="home.png"
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
 
         <ShellContent
-            Title="Cadastro"
-            FlyoutIcon="user.png"
-            ContentTemplate="{DataTemplate local:Cadastro}"
-            Route="Cadastro"/>
-
-        <ShellContent
             Title="Veículos"
-            FlyoutIcon="user.png"
+            Icon="hatchback.png"
             ContentTemplate="{DataTemplate local:Veiculos}"
             Route="Veiculos"/>
 
         <ShellContent
             Title="Marca"
-            FlyoutIcon="user.png"
+            Icon="registrado.png"
             ContentTemplate="{DataTemplate local:Marca}"
             Route="Marca"/>
 
         <ShellContent
             Title="Modelo"
-            FlyoutIcon="user.png"
+            Icon="regiscertificate.png"
             ContentTemplate="{DataTemplate local:Modelo}"
             Route="Modelo"/>
         
     </FlyoutItem>
+    
+    
 </Shell>
