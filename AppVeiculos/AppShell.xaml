@@ -28,16 +28,22 @@
             Route="Cadastro"/>
 
         <ShellContent
-            Title="Adicionar"
-            FlyoutIcon="user.png"
-            ContentTemplate="{DataTemplate local:Adicionar}"
-            Route="Adicionar"/>
-
-        <ShellContent
             Title="Veículos"
             FlyoutIcon="user.png"
             ContentTemplate="{DataTemplate local:Veiculos}"
             Route="Veiculos"/>
 
+        <ShellContent
+            Title="Marca"
+            FlyoutIcon="user.png"
+            ContentTemplate="{DataTemplate local:Marca}"
+            Route="Marca"/>
+
+        <ShellContent
+            Title="Modelo"
+            FlyoutIcon="user.png"
+            ContentTemplate="{DataTemplate local:Modelo}"
+            Route="Modelo"/>
+        
     </FlyoutItem>
 </Shell>
