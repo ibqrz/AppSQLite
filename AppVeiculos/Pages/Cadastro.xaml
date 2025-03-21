@@ -6,9 +6,9 @@
     <VerticalStackLayout
         Spacing="20"
         Padding="20"
-        BackgroundColor="LightGray">
+        >
         <Image
-             Source="car.png"
+             Source="racingcar.png"
              HeightRequest="60"
              WidthRequest="60"/>
 
@@ -16,7 +16,7 @@
              x:Name="lblLogin"
              Text="Veiculos"
              HorizontalTextAlignment="Center"
-             TextColor="Black"/>
+             TextColor="White"/>
 
         <Grid
             Padding="30"
@@ -45,36 +45,36 @@
             <Label
                 x:Name="lblNome"
                 Text="Nome"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="0"
                 Grid.Column="0"/>
             <Entry
                 x:Name="etrNome"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="1"
                 Grid.Column="0"/>
 
             <Label
                 x:Name="lblSobrenome"
                 Text="Sobrenome"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="0"
                 Grid.Column="1"/>
             <Entry
                 x:Name="etrSobrenome"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="1"
                 Grid.Column="1"/>
 
             <Label
                 x:Name="lblTelefone"
                 Text="Telefone"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="2"
                 Grid.Column="0"/>
             <Entry
                 x:Name="etrTelefone"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="3"
                 Grid.Column="0"
                 Keyboard="Telephone"/>
@@ -82,12 +82,12 @@
             <Label
                 x:Name="lblCep"
                 Text="Cep"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="2"
                 Grid.Column="1"/>
             <Entry
                 x:Name="etrCep"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="3"
                 Grid.Column="1"
                 Keyboard="Numeric"/>
@@ -95,43 +95,43 @@
             <Label
                 x:Name="lblEnrdereco"
                 Text="Endereço"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="4"
                 Grid.Column="0"/>
             <Entry
                 x:Name="etrEndereco"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="5"
                 Grid.Column="0"/>
 
             <Label
                 x:Name="lblNumero"
                 Text="Número"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="4"
                 Grid.Column="1"/>
             <Entry
                 x:Name="etrNumero"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="5"
                 Grid.Column="1"/>
 
             <Label
                 x:Name="lblCidade"
                 Text="Cidade"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="6"
                 Grid.Column="0"/>
             <Entry
                 x:Name="etrCidade"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="7"
                 Grid.Column="0"/>
 
             <Label
                 x:Name="lblEstado"
                 Text="Estado"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="6"
                 Grid.Column="1"/>
             <Picker 
@@ -174,12 +174,12 @@
             <Label
                 x:Name="lblEmail"
                 Text="Email"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="8"
                 Grid.Column="0"/>
             <Entry
                 x:Name="etrEmail"
-                TextColor="Black"
+                TextColor="White"
                 Keyboard="Email"
                 Grid.Row="9"
                 Grid.ColumnSpan="2"/>
@@ -187,19 +187,19 @@
             <Label
                 x:Name="lblSenha"
                 Text="Senha"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="10"
                 Grid.Column="0"/>
             <Entry
                 x:Name="etrSenha"
-                TextColor="Black"
+                TextColor="White"
                 Grid.Row="11"
                 Grid.ColumnSpan="2"/>
 
             <Button
                 x:Name="btnCadastro"
                 Text="Cadastrar"
-                BackgroundColor="IndianRed"
+                BackgroundColor="Maroon"
                 TextColor="White"
                 Grid.Row="12"
                 Grid.ColumnSpan="2"/>

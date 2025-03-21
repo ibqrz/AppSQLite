@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppVeiculos.Login"
+             Title="Login">
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="30">
+
+            <Label
+                x:Name="lblCadastrar"
+                Text="Cadastre-se"
+                TextColor="White"
+                HorizontalTextAlignment="End"
+                NavigationPage.BackButtonTitle="btnCadastroOnClcked"/>
+
+            <Image
+                Source="car.png"
+                HeightRequest="60"
+                WidthRequest="60"/>
+
+            <Label
+                x:Name="lblLogin"
+                Text="Veiculos"
+                HorizontalTextAlignment="Center"
+                TextColor="White"/>
+
+            <Label
+                x:Name="lblEmail"
+                Text="Email"
+                TextColor="White"/>
+            <Entry
+                x:Name="etrEmail"
+                TextColor="White"/>
+
+            <Label
+                x:Name="lblSenha"
+                Text="Senha"
+                TextColor="White"/>
+            <Entry
+                x:Name="etrSenha"
+                TextColor="White"/>
+
+            <Button
+                x:Name="btnEntrar"
+                Text="Entrar"
+                BackgroundColor="Maroon"
+                TextColor="White"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
