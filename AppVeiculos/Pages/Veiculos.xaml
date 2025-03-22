@@ -2,21 +2,32 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppVeiculos.Veiculos"
-             Title="Veiculos">
-    <VerticalStackLayout
-        Spacing="30"
-        Padding="30">
-        <Label 
-            Text=""
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+             Title="Veículos">
 
-        <Button
-            x:Name="btnAddVeiculo"
-            Text="Adicionar"
-            TextColor="White"
-            BackgroundColor="Maroon"
-            Clicked="btnAddVeiculoOnClicked"/>
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="30"
+            Padding="30">
 
-    </VerticalStackLayout>
+            <Border
+            StrokeShape="RoundRectangle 10, 10, 10, 10">
+
+                <SearchBar
+                FlowDirection="LeftToRight"
+                Placeholder="Pesquisar"
+                PlaceholderColor="White"/>
+
+            </Border>
+
+            <Button
+                x:Name="btnAddVeiculo"
+                Text="Adicionar"
+                TextColor="White"
+                BackgroundColor="Maroon"
+                Clicked="btnAddVeiculoOnClicked"
+                TranslationY="540"/>
+            
+        </VerticalStackLayout>
+    </ScrollView>
 </ContentPage>
+

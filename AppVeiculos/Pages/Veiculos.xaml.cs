@@ -1,3 +1,7 @@
+using System.Collections.ObjectModel;
+using System.Windows.Input;
+using Microsoft.Maui.Controls;
+
 namespace AppVeiculos;
 
 public partial class Veiculos : ContentPage
@@ -11,5 +15,4 @@ public partial class Veiculos : ContentPage
 	{
 		await Navigation.PushAsync(new AddVeiculo());
 	}
-
 }

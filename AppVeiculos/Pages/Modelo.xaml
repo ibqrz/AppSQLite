@@ -6,17 +6,24 @@
     <VerticalStackLayout
         Padding="30"
         Spacing="30">
-        <Label 
-            Text=""
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+
+        <Border
+            StrokeShape="RoundRectangle 10, 10, 10, 10">
+
+            <SearchBar
+                FlowDirection="LeftToRight"
+                Placeholder="Pesquisar"
+                PlaceholderColor="White"/>
+
+        </Border>
 
         <Button
             x:Name="btAddModelo"
             Text="Adicionar"
             TextColor="White"
             BackgroundColor="Maroon"
-            Clicked="btnAddModeloOnClicked"/>
+            Clicked="btnAddModeloOnClicked"
+            TranslationY="540"/>
         
     </VerticalStackLayout>
 </ContentPage>
