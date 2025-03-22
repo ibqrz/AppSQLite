@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppVeiculos.AddMarca"
-             Title="AddMarca">
+             Title="Marca">
 
     <ScrollView>
         <VerticalStackLayout
@@ -17,30 +17,48 @@
             <Label 
                 Text="Marca"
                 VerticalOptions="Center" 
-                HorizontalOptions="Center" 
+                HorizontalOptions="Center"
+                FontSize="18"
                 TextColor="White"/>
 
             <Label
                 x:Name="lblMarca"
                 Text="Marca"
-                TextColor="White"/>
-            <Entry
+                TextColor="White"
+                FontSize="18"
+                TranslationY="30"
+                FontFamily=""/>
+            <Border 
+                StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Entry
                 x:Name="etrMarca"
-                TextColor="White"/>
+                BackgroundColor="Transparent"
+                HeightRequest="50"/>
+            </Border>
 
             <Label
                 x:Name="lblOBSMarca"
                 Text="Observações"
-                TextColor="White"/>
-            <Editor
+                TextColor="White"
+                FontSize="18"
+                TranslationY="30"/>
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Editor
                 x:Name="edtOBSMarca"
-                TextColor="White"/>
+                TextColor="White"
+                BackgroundColor="Transparent"
+                HeightRequest="100"/>
+            </Border>
 
             <Button
                 x:Name="btnAddMarca"
                 Text="Adicionar"
                 TextColor="White"
-                BackgroundColor="Maroon"/>
+                BackgroundColor="Maroon"
+                Clicked="btnAddMarcaOnClicked"
+                TranslationY="105"/>
 
         </VerticalStackLayout>
     </ScrollView>

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppVeiculos.AddModelo"
-             Title="AddModelo">
+             Title="Modelo">
     <ScrollView>
         <VerticalStackLayout
             Spacing="30"
@@ -17,29 +17,46 @@
                 Text="Modelo"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center" 
-                TextColor="White"/>
+                TextColor="White"
+                FontSize="18"/>
 
             <Label
                 x:Name="lblModelo"
                 Text="Modelo"
-                TextColor="White"/>
-            <Entry
-                x:Name="etrModelo"
-                TextColor="White"/>
+                TextColor="White"
+                FontSize="18"
+                TranslationY="30"/>
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Entry
+                    x:Name="etrModelo"
+                    TextColor="White"
+                    HeightRequest="50"/>
+            </Border>
 
             <Label
                 x:Name="lblOBSModelo"
                 Text="Observações"
-                TextColor="White"/>
-            <Editor
-                x:Name="edtOBSModelo"
-                TextColor="White"/>
+                TextColor="White"
+                FontSize="18"
+                TranslationY="30"/>
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Editor
+                    x:Name="edtOBSModelo"
+                    TextColor="White"
+                    HeightRequest="100"/>
+            </Border>
 
             <Button
                 x:Name="btnAddModelo"
                 Text="Adicionar"
                 TextColor="White"
-                BackgroundColor="Maroon"/>
+                BackgroundColor="Maroon"
+                TranslationY="105"
+                Clicked="btnAddModeloOnClicked"/>
 
         </VerticalStackLayout>
     </ScrollView>

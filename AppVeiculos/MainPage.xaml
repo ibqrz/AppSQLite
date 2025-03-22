@@ -10,22 +10,25 @@
 
             <Image
                 Source="racingcar.png"
-                HeightRequest="100"
-                WidthRequest="110"/>
+                HeightRequest="150"
+                WidthRequest="210"
+                TranslationY="110"/>
 
             <Button
                 x:Name="btnLogin"
                 Text="Login"
                 Clicked="btnLoginOnClicked"
                 BackgroundColor="Maroon"
-                TextColor="White"/>
+                TextColor="White"
+                TranslationY="240"/>
 
             <Button
                 x:Name="btnCadastrar"
                 Text="Cadastrar-se"
                 Clicked="btnCadastrarOnClicked"
                 BackgroundColor="Maroon"
-                TextColor="White"/>
+                TextColor="White"
+                TranslationY="250"/>
 
         </VerticalStackLayout>
     </ScrollView>

@@ -2,31 +2,24 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppVeiculos.AddVeiculo"
-             Title="AddVeiculo">
+             Title="Veículo">
     <VerticalStackLayout
-    Spacing="20"
-    Padding="20"
-    >
+    Spacing="30"
+    Padding="30">
         <Image
          Source="racingcar.png"
          HeightRequest="100"
          WidthRequest="110"/>
 
         <Label
-         x:Name="lblAddVeiculo"
-         Text="Veiculos"
-         HorizontalTextAlignment="Center"
-         TextColor="White"/>
-
-        <Label
-        x:Name="lblAddImg"
-        Text="Adicionar Imagem"
-        HorizontalTextAlignment="Center"
-        TextColor="White"/>
+            x:Name="lblAddVeiculo"
+            Text="Veículo"
+            HorizontalTextAlignment="Center"
+            TextColor="White"
+            FontSize="18"/>
 
         <Grid
-        Padding="30"
-        RowSpacing="5"
+        RowSpacing="15"
         ColumnSpacing="10">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -47,73 +40,110 @@
             </Grid.ColumnDefinitions>
 
             <Label
-            x:Name="lblVeiculo"
-            Text="Veículo"
-            TextColor="White"
-            Grid.Row="0"
-            Grid.Column="0"/>
-            <Entry
-            x:Name="etrVeiculo"
-            TextColor="White"
-            Grid.Row="1"
-            Grid.Column="0"/>
+                x:Name="lblVeiculo"
+                Text="Veículo"
+                TextColor="White"
+                FontSize="15.5"
+                Grid.Row="0"
+                Grid.Column="0"
+                TranslationY="15"/>
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Grid.Row="1"
+                Grid.Column="0">
+                <Entry
+                    x:Name="etrVeiculo"
+                    TextColor="White"
+                    HeightRequest="50"/>
+            </Border>
 
             <Label
-            x:Name="lblMarca"
-            Text="Marca"
-            TextColor="White"
-            Grid.Row="0"
-            Grid.Column="1"/>
-            <Entry
-            x:Name="etrMarca"
-            TextColor="White"
-            Grid.Row="1"
-            Grid.Column="1"/>
+                x:Name="lblMarca"
+                Text="Marca"
+                TextColor="White"
+                FontSize="15.5"
+                Grid.Row="0"
+                Grid.Column="1"
+                TranslationY="15"/>
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Grid.Row="1"
+                Grid.Column="1">
+                <Entry
+                    x:Name="etrMarca"
+                    TextColor="White"
+                    HeightRequest="50"/>
+            </Border>
 
             <Label
-            x:Name="lblModelo"
-            Text="Modelo"
-            TextColor="White"
-            Grid.Row="2"
-            Grid.Column="0"/>
-            <Entry
-            x:Name="etrModelo"
-            TextColor="White"
-            Grid.Row="3"
-            Grid.Column="0"/>
+                x:Name="lblModelo"
+                Text="Modelo"
+                TextColor="White"
+                FontSize="15.5"
+                Grid.Row="2"
+                Grid.Column="0"
+                TranslationY="15"/>
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Grid.Row="3"
+                Grid.Column="0">
+                <Entry
+                    x:Name="etrModelo"
+                    TextColor="White"
+                    HeightRequest="50"/>   
+            </Border>
 
             <Label
-            x:Name="lblAnoFab"
-            Text="Ano de Fabricação"
-            TextColor="White"
-            Grid.Row="2"
-            Grid.Column="1"/>
-            <DatePicker
-            x:Name="etrAnoFab"
-            TextColor="White"
-            Grid.Row="3"
-            Grid.Column="1"
-            Format="yyyy"/>
+                x:Name="lblAnoFab"
+                Text="Ano de Fabricação"
+                TextColor="White"
+                FontSize="15.5"
+                Grid.Row="2"
+                Grid.Column="1"
+                TranslationY="15"/>
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Grid.Row="3"
+                Grid.Column="1">
+                <Entry
+                    x:Name="etrAnoFab"
+                    TextColor="White"
+                    HeightRequest="50"
+                    Keyboard="Numeric"/>
+            </Border>
 
             <Label
-            x:Name="lblObsVeiculo"
-            Text="Observações do Veículo"
-            TextColor="White"
-            Grid.Row="4"
-            Grid.ColumnSpan="2"/>
-            <Editor
-            x:Name="etrObsVeiculos"
-            TextColor="White"
-            Grid.Row="5"
-            Grid.ColumnSpan="2"/>
+                x:Name="lblObsVeiculo"
+                Text="Observações do Veículo"
+                TextColor="White"
+                FontSize="15.5"
+                Grid.Row="4"
+                Grid.ColumnSpan="2"
+                TranslationY="15"/>
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
+                Grid.Row="5"
+                Grid.ColumnSpan="2">
+                <Editor
+                    x:Name="edtObsVeiculo"
+                    TextColor="White"
+                    HeightRequest="100"/>   
+            </Border>
 
             <Button
-            x:Name="btnAdd"
-            Text="Adicionar"
-            BackgroundColor="Maroon"
-            TextColor="White"
-            Grid.Row="6"
-            Grid.ColumnSpan="2"/>
+                x:Name="btnAdd"
+                Text="Adicionar"
+                BackgroundColor="Maroon"
+                TextColor="White"
+                Grid.Row="6"
+                Grid.ColumnSpan="2"
+                TranslationY="65.8"
+                Clicked="btnAddVeiculoOnClicked"/>
 
         </Grid>
     </VerticalStackLayout>
