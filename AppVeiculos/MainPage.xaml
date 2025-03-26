@@ -9,9 +9,9 @@
             Spacing="30">
 
             <Image
-                Source="driveteste.png"
-                HeightRequest="300"
-                WidthRequest="600"/>
+                Source="branco.png"
+                HeightRequest="200"
+                WidthRequest="300"/>
 
             <Button
                 x:Name="btnLogin"

@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppVeiculos.EdtVeiculo"
-             Title="Editar">
+             Title="Editar Veículo">
     <ScrollView>
         <VerticalStackLayout
             Spacing="30"
@@ -145,8 +145,6 @@
                     Grid.ColumnSpan="2"
                     TranslationY="65.8"
                     Clicked="btnEdtVeiculoOnClicked"/>
-                <ImageButton
-                    Source="edit.png"/>
 
             </Grid>
         </VerticalStackLayout>

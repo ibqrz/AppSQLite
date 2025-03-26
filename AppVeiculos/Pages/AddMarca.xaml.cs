@@ -19,7 +19,7 @@ public partial class AddMarca : ContentPage
 
         if (string.IsNullOrWhiteSpace(marca))
         {
-            DisplayAlert("ERRO", "O campo 'Marca' precisa ser preeenchido!", "Ok");
+            DisplayAlert("ERRO", "O campo 'Marca' precisa ser preenchido!", "Ok");
             return;
         }
         

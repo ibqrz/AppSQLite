@@ -13,20 +13,22 @@ public partial class AddVeiculo : ContentPage
     private async void btnAddVeiculoOnClicked(object? sender, EventArgs e)
     {
         string veiculo = etrVeiculo.Text;
-        // int ano = etrAnoFab; 
-        // string obsVeiculo = edtObsVeiculos.Text;
+        // int ano = etrAnoFab.Text; 
+        // string obsVeiculo = edtObsVeiculo.Text;
 
         // salvar no banco de dados
 
         if (string.IsNullOrWhiteSpace(veiculo))
         {
-            DisplayAlert("ERRO", "Os campos 'camposEx' precisam estar preenchidos!", "Ok");
+            DisplayAlert("ERRO", "Todos os campos precisam estar preenchidos!", "Ok");
             return;
         }
 
         await DisplayAlert("Veículo Adicionado", $"Veículo: {veiculo}", "OK");
 
         etrVeiculo.Text = string.Empty;
+        // etrAnoFab.Text = string.Empty;
+        // edtObsVeiculo.Text = string.Empty;
 
     }
 
