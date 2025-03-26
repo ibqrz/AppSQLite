@@ -1,16 +1,13 @@
-using System.Collections.ObjectModel;
-using System.Windows.Input;
-
 namespace AppVeiculos;
 
-public partial class AddVeiculo : ContentPage
+public partial class EdtVeiculo : ContentPage
 {
-	public AddVeiculo()
+	public EdtVeiculo()
 	{
 		InitializeComponent();
 	}
 
-    private async void btnAddVeiculoOnClicked(object? sender, EventArgs e)
+    private async void btnEdtVeiculoOnClicked(object? sender, EventArgs e)
     {
         string veiculo = etrVeiculo.Text;
         // int ano = etrAnoFab; 
@@ -24,10 +21,9 @@ public partial class AddVeiculo : ContentPage
             return;
         }
 
-        await DisplayAlert("Veículo Adicionado", $"Veículo: {veiculo}", "OK");
+        await DisplayAlert("Veículo Editado", $"Veículo: {veiculo}", "OK");
 
         etrVeiculo.Text = string.Empty;
 
     }
-
 }

@@ -12,4 +12,9 @@ public partial class Marca : ContentPage
         await Navigation.PushAsync(new AddMarca());
     }
 
+    private async void imgEditOnClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new EditMarca());
+    }
+
 }

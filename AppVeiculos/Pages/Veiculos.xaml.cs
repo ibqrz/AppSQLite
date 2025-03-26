@@ -15,4 +15,9 @@ public partial class Veiculos : ContentPage
 	{
 		await Navigation.PushAsync(new AddVeiculo());
 	}
+
+	private async void imgEditOnClicked(object sender, EventArgs e)
+	{
+		await Navigation.PushAsync(new EdtVeiculo());
+	}
 }

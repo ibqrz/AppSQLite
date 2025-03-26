@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppVeiculos.EditMarca"
+             Title="EditMarca">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="30"
+            Padding="30">
+
+            <Image
+                Source="racingcar.png"
+                HeightRequest="100"
+                WidthRequest="110"/>
+
+            <Label 
+                Text="Marca"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                FontSize="18"
+                TextColor="White"/>
+
+            <Label
+                x:Name="lblMarca"
+                Text="Marca"
+                TextColor="White"
+                FontSize="18"
+                TranslationY="30"
+                FontFamily=""/>
+            <Border 
+                StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Entry
+                x:Name="etrMarca"
+                BackgroundColor="Transparent"
+                HeightRequest="50"/>
+            </Border>
+
+            <Label
+                x:Name="lblOBSMarca"
+                Text="Observações"
+                TextColor="White"
+                FontSize="18"
+                TranslationY="30"/>
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Editor
+                x:Name="edtOBSMarca"
+                TextColor="White"
+                BackgroundColor="Transparent"
+                HeightRequest="100"/>
+            </Border>
+
+            <Button
+                x:Name="btnAddMarca"
+                Text="Editar"
+                TextColor="White"
+                BackgroundColor="Maroon"
+                Clicked="btnEdtMarcaOnClicked"
+                TranslationY="105"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

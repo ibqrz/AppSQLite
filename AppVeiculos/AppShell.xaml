@@ -25,33 +25,43 @@
         </VerticalStackLayout>
     </Shell.FlyoutHeader>
         
-            <FlyoutItem
+    <FlyoutItem
         FlyoutDisplayOptions="AsMultipleItems">
         <ShellContent
             Title="Home"
-            Icon="home.png"
+            Icon="home2.png"
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
 
         <ShellContent
             Title="Veículos"
-            Icon="hatchback.png"
+            Icon="veiculos.png"
             ContentTemplate="{DataTemplate local:Veiculos}"
             Route="Veiculos"/>
 
         <ShellContent
             Title="Marca"
-            Icon="registrado.png"
+            Icon="marca.png"
             ContentTemplate="{DataTemplate local:Marca}"
             Route="Marca"/>
 
         <ShellContent
             Title="Modelo"
-            Icon="regiscertificate.png"
+            Icon="modelo.png"
             ContentTemplate="{DataTemplate local:Modelo}"
             Route="Modelo"/>
         
     </FlyoutItem>
-    
-    
+
+    <Shell.FlyoutFooter>
+        
+        <Label
+			Text="© Isabel Queiroz Almeida | | RA: 2402805"
+            TextColor="White"
+            Margin="0, 0, 0, 40"
+            HorizontalTextAlignment="Center"/>
+        
+    </Shell.FlyoutFooter>
+
+
 </Shell>

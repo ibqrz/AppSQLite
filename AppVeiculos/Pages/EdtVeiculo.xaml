@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AppVeiculos.AddVeiculo"
-             Title="Veículo">
+             x:Class="AppVeiculos.EdtVeiculo"
+             Title="Editar">
     <ScrollView>
         <VerticalStackLayout
             Spacing="30"
@@ -137,14 +137,16 @@
                 </Border>
 
                 <Button
-                    x:Name="btnAdd"
-                    Text="Adicionar"
+                    x:Name="btnEdt"
+                    Text="Editar"
                     BackgroundColor="Maroon"
                     TextColor="White"
                     Grid.Row="6"
                     Grid.ColumnSpan="2"
                     TranslationY="65.8"
-                    Clicked="btnAddVeiculoOnClicked"/>
+                    Clicked="btnEdtVeiculoOnClicked"/>
+                <ImageButton
+                    Source="edit.png"/>
 
             </Grid>
         </VerticalStackLayout>
