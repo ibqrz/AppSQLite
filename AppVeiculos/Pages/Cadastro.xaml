@@ -41,11 +41,15 @@
                 TextColor="White"
                 Grid.Row="0"
                 Grid.Column="0"/>
-            <Entry
-                x:Name="etrNome"
-                TextColor="White"
-                Grid.Row="1"
-                Grid.Column="0"/>
+
+            <Border
+               StrokeShape="RoundRectangle 10, 10, 10, 10"
+               Grid.Row="1"
+               Grid.Column="0">
+                <Entry
+                    x:Name="etrNome"
+                    TextColor="White"/>
+            </Border>
 
             <Label
                 x:Name="lblSobrenome"
@@ -53,11 +57,15 @@
                 TextColor="White"
                 Grid.Row="0"
                 Grid.Column="1"/>
-            <Entry
-                x:Name="etrSobrenome"
-                TextColor="White"
+
+            <Border
+               StrokeShape="RoundRectangle 10, 10, 10, 10"
                 Grid.Row="1"
-                Grid.Column="1"/>
+                Grid.Column="1">
+                <Entry
+                    x:Name="etrSobrenome"
+                    TextColor="White"/>
+            </Border>
 
             <Label
                 x:Name="lblTelefone"
@@ -65,12 +73,16 @@
                 TextColor="White"
                 Grid.Row="2"
                 Grid.Column="0"/>
-            <Entry
-                x:Name="etrTelefone"
-                TextColor="White"
-                Grid.Row="3"
-                Grid.Column="0"
-                Keyboard="Telephone"/>
+
+            <Border
+               StrokeShape="RoundRectangle 10, 10, 10, 10"
+               Grid.Row="3"
+               Grid.Column="0">
+                <Entry
+                    x:Name="etrTelefone"
+                    TextColor="White"
+                    Keyboard="Telephone"/>
+            </Border>
 
             <Label
                 x:Name="lblCep"
@@ -78,12 +90,16 @@
                 TextColor="White"
                 Grid.Row="2"
                 Grid.Column="1"/>
-            <Entry
-                x:Name="etrCep"
-                TextColor="White"
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
                 Grid.Row="3"
-                Grid.Column="1"
-                Keyboard="Numeric"/>
+                Grid.Column="1">
+                <Entry
+                    x:Name="etrCep"
+                    TextColor="White"
+                    Keyboard="Numeric"/>
+            </Border>
 
             <Label
                 x:Name="lblEnrdereco"
@@ -91,11 +107,15 @@
                 TextColor="White"
                 Grid.Row="4"
                 Grid.Column="0"/>
-            <Entry
-                x:Name="etrEndereco"
-                TextColor="White"
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
                 Grid.Row="5"
-                Grid.Column="0"/>
+                Grid.Column="0">
+                <Entry
+                    x:Name="etrEndereco"
+                    TextColor="White"/>
+            </Border>
 
             <Label
                 x:Name="lblNumero"
@@ -103,11 +123,15 @@
                 TextColor="White"
                 Grid.Row="4"
                 Grid.Column="1"/>
-            <Entry
-                x:Name="etrNumero"
-                TextColor="White"
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
                 Grid.Row="5"
-                Grid.Column="1"/>
+                Grid.Column="1">
+                <Entry
+                    x:Name="etrNumero"
+                    TextColor="White"/>
+            </Border>
 
             <Label
                 x:Name="lblCidade"
@@ -115,11 +139,15 @@
                 TextColor="White"
                 Grid.Row="6"
                 Grid.Column="0"/>
-            <Entry
-                x:Name="etrCidade"
-                TextColor="White"
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
                 Grid.Row="7"
-                Grid.Column="0"/>
+                Grid.Column="0">
+                <Entry
+                    x:Name="etrCidade"
+                    TextColor="White"/>
+            </Border>
 
             <Label
                 x:Name="lblEstado"
@@ -127,42 +155,45 @@
                 TextColor="White"
                 Grid.Row="6"
                 Grid.Column="1"/>
-            <Picker 
-                x:Name="pkrEstado"
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
                 Grid.Row="7"
                 Grid.Column="1">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>AC</x:String>
-                        <x:String>AL</x:String>
-                        <x:String>AP</x:String>
-                        <x:String>AM</x:String>
-                        <x:String>BA</x:String>
-                        <x:String>CE</x:String>
-                        <x:String>DF</x:String>
-                        <x:String>ES</x:String>
-                        <x:String>GO</x:String>
-                        <x:String>MA</x:String>
-                        <x:String>MT</x:String>
-                        <x:String>MS</x:String>
-                        <x:String>MG</x:String>
-                        <x:String>PA</x:String>
-                        <x:String>PB</x:String>
-                        <x:String>PR</x:String>
-                        <x:String>PE</x:String>
-                        <x:String>PI</x:String>
-                        <x:String>RJ</x:String>
-                        <x:String>RN</x:String>
-                        <x:String>RS</x:String>
-                        <x:String>RO</x:String>
-                        <x:String>RR</x:String>
-                        <x:String>SC</x:String>
-                        <x:String>SP</x:String>
-                        <x:String>SE</x:String>
-                        <x:String>TO</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
+                <Picker 
+                    x:Name="pkrEstado">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>AC</x:String>
+                            <x:String>AL</x:String>
+                            <x:String>AP</x:String>
+                            <x:String>AM</x:String>
+                            <x:String>BA</x:String>
+                            <x:String>CE</x:String>
+                            <x:String>DF</x:String>
+                            <x:String>ES</x:String>
+                            <x:String>GO</x:String>
+                            <x:String>MA</x:String>
+                            <x:String>MT</x:String>
+                            <x:String>MS</x:String>
+                            <x:String>MG</x:String>
+                            <x:String>PA</x:String>
+                            <x:String>PB</x:String>
+                            <x:String>PR</x:String>
+                            <x:String>PE</x:String>
+                            <x:String>PI</x:String>
+                            <x:String>RJ</x:String>
+                            <x:String>RN</x:String>
+                            <x:String>RS</x:String>
+                            <x:String>RO</x:String>
+                            <x:String>RR</x:String>
+                            <x:String>SC</x:String>
+                            <x:String>SP</x:String>
+                            <x:String>SE</x:String>
+                            <x:String>TO</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Border>
 
             <Label
                 x:Name="lblEmail"
@@ -170,12 +201,16 @@
                 TextColor="White"
                 Grid.Row="8"
                 Grid.Column="0"/>
-            <Entry
-                x:Name="etrEmail"
-                TextColor="White"
-                Keyboard="Email"
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
                 Grid.Row="9"
-                Grid.ColumnSpan="2"/>
+                Grid.ColumnSpan="2">
+                <Entry
+                    x:Name="etrEmail"
+                    TextColor="White"
+                    Keyboard="Email"/>
+            </Border>
 
             <Label
                 x:Name="lblSenha"
@@ -183,11 +218,15 @@
                 TextColor="White"
                 Grid.Row="10"
                 Grid.Column="0"/>
-            <Entry
-                x:Name="etrSenha"
-                TextColor="White"
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10"
                 Grid.Row="11"
-                Grid.ColumnSpan="2"/>
+                Grid.ColumnSpan="2">
+                <Entry
+                    x:Name="etrSenha"
+                    TextColor="White"/>
+            </Border>
 
             <Button
                 x:Name="btnCadastro"

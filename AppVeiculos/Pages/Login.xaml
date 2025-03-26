@@ -17,17 +17,24 @@
                 x:Name="lblEmail"
                 Text="Email"
                 TextColor="White"/>
-            <Entry
-                x:Name="etrEmail"
-                TextColor="White"/>
+
+            <Border
+               StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Entry
+                    x:Name="etrEmail"
+                    TextColor="White"/>
+            </Border>
 
             <Label
                 x:Name="lblSenha"
                 Text="Senha"
                 TextColor="White"/>
-            <Entry
-                x:Name="etrSenha"
-                TextColor="White"/>
+            <Border
+               StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Entry
+                    x:Name="etrSenha"
+                    TextColor="White"/>
+            </Border>
 
             <Button
                 x:Name="btnEntrar"
