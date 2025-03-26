@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppVeiculos.EditModelo"
+             Title="EditModelo">
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="30"
+            Padding="30">
+
+            <Image
+                Source="racingcar.png"
+                HeightRequest="100"
+                WidthRequest="110"/>
+
+            <Label 
+                Text="Modelo"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center" 
+                TextColor="White"
+                FontSize="18"/>
+
+            <Label
+                x:Name="lblModelo"
+                Text="Modelo"
+                TextColor="White"
+                FontSize="18"
+                TranslationY="30"/>
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Entry
+                    x:Name="etrModelo"
+                    TextColor="White"
+                    HeightRequest="50"/>
+            </Border>
+
+            <Label
+                x:Name="lblOBSModelo"
+                Text="Observações"
+                TextColor="White"
+                FontSize="18"
+                TranslationY="30"/>
+
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Editor
+                    x:Name="edtOBSModelo"
+                    TextColor="White"
+                    HeightRequest="100"/>
+            </Border>
+
+            <Button
+                x:Name="btnAddModelo"
+                Text="Editar"
+                TextColor="White"
+                BackgroundColor="Maroon"
+                TranslationY="105"
+                Clicked="btnEdtModeloOnClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

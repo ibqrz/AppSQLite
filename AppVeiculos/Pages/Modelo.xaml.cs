@@ -12,4 +12,9 @@ public partial class Modelo : ContentPage
         await Navigation.PushAsync(new AddModelo());
     }
 
+    private async void imgEditOnClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new EditModelo());
+    }
+
 }

@@ -9,10 +9,9 @@
             Spacing="30">
 
             <Image
-                Source="racingcar.png"
-                HeightRequest="150"
-                WidthRequest="210"
-                TranslationY="110"/>
+                Source="driveteste.png"
+                HeightRequest="300"
+                WidthRequest="600"/>
 
             <Button
                 x:Name="btnLogin"
@@ -20,7 +19,7 @@
                 Clicked="btnLoginOnClicked"
                 BackgroundColor="Maroon"
                 TextColor="White"
-                TranslationY="240"/>
+                TranslationY="100"/>
 
             <Button
                 x:Name="btnCadastrar"
@@ -28,7 +27,7 @@
                 Clicked="btnCadastrarOnClicked"
                 BackgroundColor="Maroon"
                 TextColor="White"
-                TranslationY="250"/>
+                TranslationY="100"/>
 
         </VerticalStackLayout>
     </ScrollView>
