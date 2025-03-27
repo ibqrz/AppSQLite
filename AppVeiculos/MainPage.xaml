@@ -9,9 +9,10 @@
             Spacing="30">
 
             <Image
-                Source="branco.png"
+                Source="vermelho.png"
                 HeightRequest="200"
-                WidthRequest="300"/>
+                WidthRequest="300"
+                TranslationY="40"/>
 
             <Button
                 x:Name="btnLogin"
