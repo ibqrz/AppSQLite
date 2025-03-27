@@ -56,7 +56,7 @@
     <Shell.FlyoutFooter>
         
         <Label
-			Text="© Isabel Queiroz Almeida | | RA: 2402805"
+			Text="© Isabel Queiroz Almeida | | RA: 2402805."
             TextColor="White"
             Margin="0, 0, 0, 40"
             HorizontalTextAlignment="Center"/>
