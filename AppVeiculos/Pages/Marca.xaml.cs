@@ -17,4 +17,8 @@ public partial class Marca : ContentPage
         await Navigation.PushAsync(new EditMarca());
     }
 
+    private async void imgDeleteOnClicked(object sender, EventArgs e)
+    {
+        DisplayAlert("Excluída", "A marca foi deletada!", "Ok");
+    }
 }

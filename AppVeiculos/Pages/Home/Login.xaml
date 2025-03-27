@@ -5,7 +5,7 @@
              Title="Login">
     <ScrollView>
         <VerticalStackLayout
-            Padding="30,0"
+            Padding="30"
             Spacing="30">
 
             <Image
@@ -16,31 +16,38 @@
             <Label
                 x:Name="lblEmail"
                 Text="Email"
-                TextColor="White"/>
+                TextColor="White"
+                FontSize="18"
+                TranslationY="30"/>
 
             <Border
                StrokeShape="RoundRectangle 10, 10, 10, 10">
                 <Entry
                     x:Name="etrEmail"
-                    TextColor="White"/>
+                    TextColor="White"
+                    HeightRequest="50"/>
             </Border>
 
             <Label
                 x:Name="lblSenha"
                 Text="Senha"
-                TextColor="White"/>
+                TextColor="White"
+                FontSize="18"
+                TranslationY="30"/>
             <Border
                StrokeShape="RoundRectangle 10, 10, 10, 10">
                 <Entry
                     x:Name="etrSenha"
-                    TextColor="White"/>
+                    TextColor="White"
+                    HeightRequest="50"/>
             </Border>
 
             <Button
                 x:Name="btnEntrar"
                 Text="Entrar"
                 BackgroundColor="Maroon"
-                TextColor="White"/>
+                TextColor="White"
+                TranslationY="211.5"/>
 
         </VerticalStackLayout>
     </ScrollView>

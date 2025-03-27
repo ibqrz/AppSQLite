@@ -68,6 +68,7 @@
                         </Image>
 
                         <Image
+                            x:Name="imgDelete"
                             Source="cancel.png"
                             HeightRequest="25"
                             WidthRequest="30"
@@ -75,6 +76,10 @@
                             Margin="0, 70, 0, 0"
                             Grid.Row="0"
                             Grid.Column="1">
+
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="imgDeleteOnClicked"/>
+                            </Image.GestureRecognizers>
                         </Image>
                     </Grid>
                 </StackLayout>

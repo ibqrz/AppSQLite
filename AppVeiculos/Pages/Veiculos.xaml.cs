@@ -20,4 +20,9 @@ public partial class Veiculos : ContentPage
 	{
 		await Navigation.PushAsync(new EdtVeiculo());
 	}
+
+	private async void imgDeleteOnClicked(object sender, EventArgs e)
+	{
+		DisplayAlert("Excluído", "O veículo foi deletado!", "Ok");
+	}
 }
