@@ -17,4 +17,8 @@ public partial class Modelo : ContentPage
         await Navigation.PushAsync(new EditModelo());
     }
 
+    private async void imgDeleteOnClicked(object sender, EventArgs e)
+    {
+        DisplayAlert("Excluído", "O modelo foi deletado!", "Ok");
+    }
 }
