@@ -13,6 +13,11 @@
                 HeightRequest="200"
                 WidthRequest="300"
                 TranslationY="40"/>
+            <Image
+                Source="driveon.png"
+                HeightRequest="100"
+                WidthRequest="300"
+                HorizontalOptions="Center"/>
 
             <Button
                 x:Name="btnLogin"

@@ -22,6 +22,14 @@
                 Source="car2.png"
                 HeightRequest="100"
                 WidthRequest="100"/>
+            <Frame
+                HeightRequest="90"
+                WidthRequest="1000">
+                <Image
+                    Source="driveon.png"
+                    HeightRequest="100"
+                    WidthRequest="200"/>
+            </Frame>
         </VerticalStackLayout>
     </Shell.FlyoutHeader>
         
@@ -56,7 +64,7 @@
     <Shell.FlyoutFooter>
         
         <Label
-			Text="© Isabel Queiroz Almeida | | RA: 2402805."
+			Text="© Isabel Queiroz Almeida | | RA: 2402805"
             TextColor="White"
             Margin="0, 0, 0, 40"
             HorizontalTextAlignment="Center"/>

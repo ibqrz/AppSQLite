@@ -9,7 +9,7 @@
             Spacing="30">
 
             <Image
-                Source="racingcar.png"
+                Source="capacete.png"
                 HeightRequest="100"
                 WidthRequest="110"/>
 
