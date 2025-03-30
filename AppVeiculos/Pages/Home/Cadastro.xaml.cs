@@ -6,4 +6,9 @@ public partial class Cadastro : ContentPage
 	{
 		InitializeComponent();
 	}
+
+	private async void btnbtnCadastroOnClicked(object sender, EventArgs e)
+	{
+		await DisplayAlert("Cadastrado(a)", "Cadastro realizado!", "Ok");
+	}
 }
