@@ -43,8 +43,9 @@
             </Border>
 
             <Button
-                x:Name="btnEntrar"
-                Text="Entrar"
+                x:Name="btnLogin"
+                Text="Login"
+                Clicked="btnLoginOnClicked"
                 BackgroundColor="Maroon"
                 TextColor="White"
                 TranslationY="211.5"/>

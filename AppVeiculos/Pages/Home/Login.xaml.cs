@@ -7,9 +7,9 @@ public partial class Login : ContentPage
 		InitializeComponent();
 	}
 
-	private async void btnCadastroOnClicked(object sender, EventArgs e)
+	private async void btnLoginOnClicked(object sender, EventArgs e)
 	{
-		await Navigation.PushAsync(new Cadastro());
+		await DisplayAlert("Login", "Login realizado!", "Ok");
 	}
 
 }

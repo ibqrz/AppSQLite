@@ -231,6 +231,7 @@
             <Button
                 x:Name="btnCadastro"
                 Text="Cadastrar"
+                Clicked="btnbtnCadastroOnClicked"
                 BackgroundColor="Maroon"
                 TextColor="White"
                 Grid.Row="12"

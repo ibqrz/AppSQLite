@@ -20,7 +20,7 @@ public partial class AddVeiculo : ContentPage
 
         if (string.IsNullOrWhiteSpace(veiculo))
         {
-            DisplayAlert("ERRO", "Todos os campos precisam estar preenchidos!", "Ok");
+            DisplayAlert("ERRO", "Verifique se os campos estão preenchidos!", "Ok");
             return;
         }
 
