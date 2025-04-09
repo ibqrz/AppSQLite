@@ -10,27 +10,30 @@
     Shell.BackgroundColor="Maroon"
     Shell.FlyoutBackgroundColor="Maroon"
     Shell.TitleColor="White"
+    Shell.TabBarForegroundColor="White"
     Shell.DisabledColor="White"
     Shell.ForegroundColor="White"
     Shell.UnselectedColor="White">
 
     <Shell.FlyoutHeader>
-        <VerticalStackLayout
-            Spacing="20"
-            Padding="20">
-            <Image
-                Source="car2.png"
-                HeightRequest="100"
-                WidthRequest="100"/>
-            <Frame
-                HeightRequest="90"
-                WidthRequest="1000">
+        <ScrollView>
+            <VerticalStackLayout
+                Spacing="20"
+                Padding="20">
                 <Image
-                    Source="driveon.png"
+                    Source="car2.png"
                     HeightRequest="100"
-                    WidthRequest="200"/>
-            </Frame>
-        </VerticalStackLayout>
+                    WidthRequest="100"/>
+                <Frame
+                    HeightRequest="90"
+                    WidthRequest="1000">
+                    <Image
+                        Source="driveon.png"
+                        HeightRequest="100"
+                        WidthRequest="200"/>
+                </Frame>
+            </VerticalStackLayout>
+        </ScrollView>
     </Shell.FlyoutHeader>
         
     <FlyoutItem
@@ -70,6 +73,5 @@
             HorizontalTextAlignment="Center"/>
         
     </Shell.FlyoutFooter>
-
 
 </Shell>
