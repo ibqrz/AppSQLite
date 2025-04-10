@@ -19,12 +19,13 @@ public partial class AddMarca : ContentPage
 
         if (string.IsNullOrWhiteSpace(marca))
         {
-            DisplayAlert("ERRO", "O campo 'Marca' precisa ser preenchido!", "Ok");
+            await DisplayAlert("ERRO", "O campo 'Marca' precisa ser preenchido!", "Ok");
             return;
         }
         
         await DisplayAlert("Marca Adicionada", $"Marca: {marca}\nObservações: {obsMarca}", "OK");
-            
+        await Shell.Current.GoToAsync("//Marca");
+
         etrMarca.Text = string.Empty;
         edtOBSMarca.Text = string.Empty;
     }
