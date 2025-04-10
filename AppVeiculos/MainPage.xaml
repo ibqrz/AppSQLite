@@ -27,14 +27,6 @@
                 TextColor="White"
                 TranslationY="100"/>
 
-            <Button
-                x:Name="btnCadastrar"
-                Text="Cadastrar-se"
-                Clicked="btnCadastrarOnClicked"
-                BackgroundColor="Maroon"
-                TextColor="White"
-                TranslationY="100"/>
-
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

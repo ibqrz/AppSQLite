@@ -20,11 +20,12 @@ public partial class AddVeiculo : ContentPage
 
         if (string.IsNullOrWhiteSpace(veiculo))
         {
-            DisplayAlert("ERRO", "Verifique se os campos estão preenchidos!", "Ok");
+            await DisplayAlert("ERRO", "Verifique se os campos estão preenchidos!", "Ok");
             return;
         }
 
         await DisplayAlert("Veículo Adicionado", $"Veículo: {veiculo}", "OK");
+        await Shell.Current.GoToAsync("//Veiculos");
 
         etrVeiculo.Text = string.Empty;
         // etrAnoFab.Text = string.Empty;

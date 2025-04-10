@@ -61,7 +61,13 @@
             Icon="modelo.png"
             ContentTemplate="{DataTemplate local:Modelo}"
             Route="Modelo"/>
-        
+
+        <ShellContent
+            Title="Cadastro"
+            Icon="capacete2.png"
+            ContentTemplate="{DataTemplate local:Cadastro}"
+            Route="Cadastro"/>
+
     </FlyoutItem>
 
     <Shell.FlyoutFooter>

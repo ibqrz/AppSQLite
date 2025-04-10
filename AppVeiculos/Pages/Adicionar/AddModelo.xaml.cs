@@ -21,8 +21,9 @@ public partial class AddModelo : ContentPage
 		}
 
 		await DisplayAlert("Modelo Adicionado", $"Modelo: {modelo}\nObservações: {obsModelo}", "OK");
+        await Shell.Current.GoToAsync("//Modelo");
 
-		etrModelo.Text = string.Empty;
+        etrModelo.Text = string.Empty;
 		edtOBSModelo.Text = string.Empty;
 
 	}
