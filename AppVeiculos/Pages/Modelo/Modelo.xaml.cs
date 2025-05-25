@@ -19,6 +19,6 @@ public partial class Modelo : ContentPage
 
     private async void imgDeleteOnClicked(object sender, EventArgs e)
     {
-        DisplayAlert("Excluído", "O modelo foi deletado!", "Ok");
+        await DisplayAlert("Excluído", "O modelo foi deletado!", "Ok");
     }
 }
