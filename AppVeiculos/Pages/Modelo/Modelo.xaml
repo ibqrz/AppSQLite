@@ -103,6 +103,63 @@
                     </Frame>
                 </ListView.Header>
             </ListView>
+            <Frame
+                HeightRequest="150"
+                CornerRadius="10"
+                BorderColor="Transparent"
+                BackgroundColor="DimGray">
+                <StackLayout
+                    Spacing="10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition/>
+                            <ColumnDefinition/>
+                        </Grid.ColumnDefinitions>
+                        <Image
+                            Source="registcert.png"
+                            HeightRequest="100"
+                            WidthRequest="100"
+                            HorizontalOptions="Start"
+                            Grid.Row="0"
+                            Grid.Column="0"/>
+
+                        <Image
+                            x:Name="imgEdit"
+                            Source="edit.png"
+                            HeightRequest="30"
+                            WidthRequest="30"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center"
+                            View.Margin="0, -50, 0, 0"
+                            Grid.Row="0"
+                            Grid.Column="1">
+
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="imgEditOnClicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+
+                        <Image
+                            x:Name="imgDelete"
+                            Source="cancel.png"
+                            HeightRequest="25"
+                            WidthRequest="30"
+                            HorizontalOptions="End"
+                            Margin="0, 70, 0, 0"
+                            Grid.Row="0"
+                            Grid.Column="1">
+
+                            <Image.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="imgDeleteOnClicked"/>
+                            </Image.GestureRecognizers>
+                        </Image>
+                    </Grid>
+                </StackLayout>
+            </Frame>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>
