@@ -1,29 +1,44 @@
+using AppVeiculos.Models;
+
 namespace AppVeiculos;
 
 public partial class EditModelo : ContentPage
 {
-	public EditModelo()
-	{
-		InitializeComponent();
-	}
+
+    public EditModelo() 
+    {
+        InitializeComponent();
+    }
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        if (BindingContext is AppVeiculos.Models.Modelo modeloParaEditar)
+        {
+            etrModelo.Text = modeloParaEditar.modNome;
+            edtOBSModelo.Text = modeloParaEditar.modObs;
+        }
+        else
+        {
+            DisplayAlert("Erro", "Não foi possível carregar o modelo para edição.", "OK");
+        }
+    }
 
     private async void btnEdtModeloOnClicked(object? sender, EventArgs e)
     {
-        string modelo = etrModelo.Text;
-        string obsModelo = edtOBSModelo.Text;
-
-        // salvar no banco de dados
-
-        if (string.IsNullOrWhiteSpace(modelo))
+        if (BindingContext is AppVeiculos.Models.Modelo modeloParaAtualizar)
         {
-            DisplayAlert("ERRO", "O campo 'Modelo' precisa ser preenchido!", "OK");
-            return;
+            modeloParaAtualizar.modNome = etrModelo.Text;
+            modeloParaAtualizar.modObs = edtOBSModelo.Text;
+
+            await App.Db.UpdateModelo(modeloParaAtualizar);
+            await DisplayAlert("Atenção", "Modelo editado!", "Ok");
+
+            await Navigation.PopAsync();
         }
-
-        await DisplayAlert("Modelo Editado", $"Modelo: {modelo}\nObservações: {obsModelo}", "OK");
-
-        etrModelo.Text = string.Empty;
-        edtOBSModelo.Text = string.Empty;
-
+        else
+        {
+            await DisplayAlert("Erro", "Nenhum modelo válido para atualizar.", "OK");
+        }
     }
 }

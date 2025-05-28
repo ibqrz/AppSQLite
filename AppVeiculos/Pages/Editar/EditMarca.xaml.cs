@@ -16,7 +16,7 @@ public partial class EditMarca : ContentPage
 
         if (string.IsNullOrWhiteSpace(marca))
         {
-            DisplayAlert("ERRO", "O campo 'Marca' precisa ser preenchido!", "Ok");
+            await DisplayAlert("ERRO", "O campo 'Marca' precisa ser preenchido!", "Ok");
             return;
         }
 

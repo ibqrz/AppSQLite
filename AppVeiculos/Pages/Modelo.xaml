@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:models="clr-namespace:AppVeiculos.Models" 
              x:Class="AppVeiculos.Modelo"
              Title="Modelo">
     <ScrollView>
@@ -9,15 +10,24 @@
             Padding="30">
 
             <Border
-            StrokeShape="RoundRectangle 10, 10, 10, 10">
-
-                <SearchBar
-                    FlowDirection="LeftToRight"
-                    Placeholder="Pesquisar"
-                    PlaceholderColor="White"/>
-
+                StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Entry
+                    x:Name="etrModelo"
+                    Placeholder="Nome"
+                    TextColor="White"
+                    HeightRequest="50"/>
             </Border>
 
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Editor
+                    x:Name="edtOBSModelo"
+                    Placeholder="Observações"
+                    TextColor="White"
+                    HeightRequest="100"/>
+            </Border>
+
+            
             <Button
                 x:Name="btnAddModelo"
                 Text="+"
@@ -26,64 +36,52 @@
                 BackgroundColor="Maroon"
                 Clicked="btnAddModeloOnClicked"/>
 
-            <Frame
-                HeightRequest="150"
-                CornerRadius="10"
-                BorderColor="Transparent"
-                BackgroundColor="DimGray">
-                <StackLayout
-                    Spacing="10">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition/>
-                            <ColumnDefinition/>
-                        </Grid.ColumnDefinitions>
-                        <Image
-                            Source="registcert.png"
-                            HeightRequest="100"
-                            WidthRequest="100"
-                            HorizontalOptions="Start"
-                            Grid.Row="0"
-                            Grid.Column="0"/>
+            <Button 
+                x:Name="btnLimparModelo" 
+                Text="Limpar"
+                TextColor="White"
+                BackgroundColor="Maroon"
+                Clicked="btnLimparOnClicked"/>
 
-                        <Image
-                            x:Name="imgEdit"
-                            Source="edit.png"
-                            HeightRequest="30"
-                            WidthRequest="30"
-                            HorizontalOptions="End"
-                            VerticalOptions="Center"
-                            View.Margin="0, -50, 0, 0"
-                            Grid.Row="0"
-                            Grid.Column="1">
+            <Border
+            StrokeShape="RoundRectangle 10, 10, 10, 10">
 
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="imgEditOnClicked"/>
-                            </Image.GestureRecognizers>
-                        </Image>
+                <SearchBar
+                    FlowDirection="LeftToRight"
+                    Placeholder="Pesquisar"
+                    PlaceholderColor="White"
+                    TextChanged="txtSearchTextChanged"/>
 
-                        <Image
-                            x:Name="imgDelete"
-                            Source="cancel.png"
-                            HeightRequest="25"
-                            WidthRequest="30"
-                            HorizontalOptions="End"
-                            Margin="0, 70, 0, 0"
-                            Grid.Row="0"
-                            Grid.Column="1">
+            </Border>
 
-                            <Image.GestureRecognizers>
-                                <TapGestureRecognizer Tapped="imgDeleteOnClicked"/>
-                            </Image.GestureRecognizers>
-                        </Image>
-                    </Grid>
-                </StackLayout>
-            </Frame>
+            <Border StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <ListView x:Name="listModelos" ItemSelected="listModelosItemSelected" HasUnevenRows="True">
+                    <ListView.Header>
+                        <Grid ColumnDefinitions="*, *, *" BackgroundColor="Maroon" Padding="10">
+                            <Label Grid.Column="0" Text="ID:" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Grid.Column="1" Text="Nome" FontAttributes="Bold" HorizontalOptions="Center"/>
+                            <Label Grid.Column="2" Text="Obs:" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </Grid>
+                    </ListView.Header>
 
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.ContextActions>
+                                    <MenuItem Text="Remover" Clicked="btnRemover" CommandParameter="{Binding .}"/>
+                                    <MenuItem Text="Alterar" Clicked="btnAlterar" CommandParameter="{Binding .}"/>
+                                </ViewCell.ContextActions>
+
+                                <Grid ColumnDefinitions="*, *, *" Padding="10">
+                                    <Label Grid.Column="0" Text="{Binding modId}"/>
+                                    <Label Grid.Column="1" Text="{Binding modNome}" LineBreakMode="WordWrap"/>
+                                    <Label Grid.Column="2" Text="{Binding modObs}" LineBreakMode="WordWrap"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

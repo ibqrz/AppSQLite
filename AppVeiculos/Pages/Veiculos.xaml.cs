@@ -23,6 +23,6 @@ public partial class Veiculos : ContentPage
 
 	private async void imgDeleteOnClicked(object sender, EventArgs e)
 	{
-		DisplayAlert("Excluído", "O veículo foi deletado!", "Ok");
+		await DisplayAlert("Excluído", "O veículo foi deletado!", "Ok");
 	}
 }

@@ -17,7 +17,7 @@ public partial class EdtVeiculo : ContentPage
 
         if (string.IsNullOrWhiteSpace(veiculo))
         {
-            DisplayAlert("ERRO", "Verifique se os campos estão preenchidos!", "Ok");
+            await DisplayAlert("ERRO", "Verifique se os campos estão preenchidos!", "Ok");
             return;
         }
 

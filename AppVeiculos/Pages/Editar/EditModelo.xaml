@@ -20,38 +20,37 @@
                 TextColor="White"
                 FontSize="18"/>
 
-            <Label
-                x:Name="lblModelo"
-                Text="Modelo"
-                TextColor="White"
-                FontSize="18"
-                TranslationY="30"/>
+            <Border
+                StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Entry
+                    x:Name="etrIdModelo"
+                    IsEnabled="False"
+                    Text="{Binding modId}"
+                    TextColor="White"
+                    HeightRequest="50"/>
+            </Border>
 
             <Border
                 StrokeShape="RoundRectangle 10, 10, 10, 10">
                 <Entry
                     x:Name="etrModelo"
+                    IsEnabled="True"
+                    Text="{Binding modNome}"
                     TextColor="White"
                     HeightRequest="50"/>
             </Border>
-
-            <Label
-                x:Name="lblOBSModelo"
-                Text="Observações"
-                TextColor="White"
-                FontSize="18"
-                TranslationY="30"/>
 
             <Border
                 StrokeShape="RoundRectangle 10, 10, 10, 10">
                 <Editor
                     x:Name="edtOBSModelo"
+                    IsEnabled="True" Text="{Binding modObs }"
                     TextColor="White"
                     HeightRequest="100"/>
             </Border>
 
             <Button
-                x:Name="btnAddModelo"
+                x:Name="btnEdtModelo"
                 Text="Editar"
                 TextColor="White"
                 BackgroundColor="Maroon"

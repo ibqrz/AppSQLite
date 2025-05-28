@@ -19,6 +19,6 @@ public partial class Marca : ContentPage
 
     private async void imgDeleteOnClicked(object sender, EventArgs e)
     {
-        DisplayAlert("Excluída", "A marca foi deletada!", "Ok");
+        await DisplayAlert("Excluída", "A marca foi deletada!", "Ok");
     }
 }

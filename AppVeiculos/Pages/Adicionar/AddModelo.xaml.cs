@@ -16,7 +16,7 @@ public partial class AddModelo : ContentPage
 	
 		if (string.IsNullOrWhiteSpace(modelo))
 		{
-			DisplayAlert("ERRO", "O campo 'Modelo' precisa ser preenchido!", "OK");
+			await DisplayAlert("ERRO", "O campo 'Modelo' precisa ser preenchido!", "OK");
 			return;
 		}
 
