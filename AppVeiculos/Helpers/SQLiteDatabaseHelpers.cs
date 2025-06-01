@@ -18,6 +18,7 @@ namespace AppVeiculos.Helpers
             _conn = new SQLiteAsyncConnection(path);
             _conn.CreateTableAsync<AppVeiculos.Models.Modelo>().Wait();
             _conn.CreateTableAsync<Marcas>().Wait();
+            _conn.CreateTableAsync<Veiculo>().Wait(); 
         }
 
         //Modelo
@@ -54,7 +55,7 @@ namespace AppVeiculos.Helpers
             return _conn.QueryAsync<AppVeiculos.Models.Modelo>(sql);
         }
 
-        // Marcas
+        //Marcas
         public Task<int> InsertMarca(Marcas p)
         {
             return _conn.InsertAsync(p);
@@ -80,8 +81,38 @@ namespace AppVeiculos.Helpers
         public Task<List<Marcas>> SearchMarca(string p)
         {
             string sql = "SELECT * FROM Marcas WHERE marNome LIKE '%" + p + "%'";
-            
+
             return _conn.QueryAsync<Marcas>(sql);
+        }
+
+        // Veiculo
+        public Task<int> InsertVeiculo(Veiculo p)
+        {
+            return _conn.InsertAsync(p);
+        }
+
+        public Task<List<Veiculo>> UpdateVeiculo(Veiculo p)
+        {
+            string sql = "UPDATE Veiculo SET veiNome=?, veiAnoFab=?, veiObs=?, codMar=?, codMod=? WHERE veiId=?";
+
+            return _conn.QueryAsync<Veiculo>(sql, p.veiNome, p.veiAnoFab, p.veiObs, p.codMar, p.codMod, p.veiId);
+        }
+
+        public Task<int> DeleteVeiculo(int p)
+        {
+            return _conn.Table<Veiculo>().DeleteAsync(i => i.veiId == p);
+        }
+
+        public Task<List<Veiculo>> GetAllVeiculo()
+        {
+            return _conn.Table<Veiculo>().ToListAsync();
+        }
+
+        public Task<List<Veiculo>> SearchVeiculo(string p)
+        {
+            string sql = "SELECT * FROM Veiculo WHERE veiNome LIKE '%" + p + "%'";
+
+            return _conn.QueryAsync<Veiculo>(sql);
         }
     }
 }

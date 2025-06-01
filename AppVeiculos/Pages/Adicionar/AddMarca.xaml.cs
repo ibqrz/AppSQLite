@@ -31,7 +31,7 @@ public partial class AddMarca : ContentPage
 
         if (string.IsNullOrWhiteSpace(mar.marNome))
         {
-            await DisplayAlert("ERRO", "O campo 'Marca' precisa ser preenchida!", "Ok");
+            await DisplayAlert("ERRO", "O campo 'Marca' precisa ser preenchido!", "Ok");
             return;
         }
 
