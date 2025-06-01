@@ -44,7 +44,8 @@
                 StrokeShape="RoundRectangle 10, 10, 10, 10">
                 <Editor
                     x:Name="edtOBSModelo"
-                    IsEnabled="True" Text="{Binding modObs }"
+                    IsEnabled="True" 
+                    Text="{Binding modObs }"
                     TextColor="White"
                     HeightRequest="100"/>
             </Border>

@@ -1,30 +1,40 @@
+using Microsoft.Maui.Controls;
+
+using AppVeiculos.Models;
+using AppVeiculos.Helpers;
+
 namespace AppVeiculos;
 
 public partial class AddModelo : ContentPage
 {
-	public AddModelo()
-	{
-		InitializeComponent();
-	}
+    public AddModelo()
+    {
+        InitializeComponent();
+    }
 
-	private async void btnAddModeloOnClicked(object? sender, EventArgs e)
-	{
-		string modelo = etrModelo.Text;
-		string obsModelo = edtOBSModelo.Text;
+    public AddModelo(IEnumerable<AppVeiculos.Models.Modelo> mod, object modNome)
+    {
+        InitializeComponent();
+        btnAddModelo.Clicked += btnAddModeloOnClicked;
+    }
 
-		// salvar no banco de dados
-	
-		if (string.IsNullOrWhiteSpace(modelo))
-		{
-			await DisplayAlert("ERRO", "O campo 'Modelo' precisa ser preenchido!", "OK");
-			return;
-		}
+    private async void btnAddModeloOnClicked(object? sender, System.EventArgs e)
+    {
+        AppVeiculos.Models.Modelo mod = new AppVeiculos.Models.Modelo();
+        mod.modNome = etrModelo.Text;
+        mod.modObs = edtOBSModelo.Text;
 
-		await DisplayAlert("Modelo Adicionado", $"Modelo: {modelo}\nObservações: {obsModelo}", "OK");
-        await Shell.Current.GoToAsync("//Modelo");
+        await App.Db.InsertModelo(mod);
+        await DisplayAlert("Sucesso!", "Modelo adicionado.", "OK");
 
-        etrModelo.Text = string.Empty;
-		edtOBSModelo.Text = string.Empty;
+        OnAppearing();
 
-	}
+        if (string.IsNullOrWhiteSpace(mod.modNome))
+        {
+            await DisplayAlert("ERRO", "O campo 'Modelo' precisa ser preenchido!", "Ok");
+            return;
+        }
+
+        await Navigation.PopAsync();
+    }
 }

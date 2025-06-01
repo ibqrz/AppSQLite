@@ -1,111 +1,188 @@
-using System.Collections.ObjectModel;
-
 using AppVeiculos.Helpers;
 using AppVeiculos.Models;
-
+using Microsoft.Maui.Controls;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace AppVeiculos;
 
 public partial class Modelo : ContentPage
 {
-    ObservableCollection<AppVeiculos.Models.Modelo> lista = new ObservableCollection<AppVeiculos.Models.Modelo>();
-
-    /* ou - trabalha de maneira não assincrona:  
-      List<Modelo> lista = new List<Modelo>(); */
-
     public Modelo()
-	{
-		InitializeComponent();
-
-        listModelos.ItemsSource = lista;
+    {
+        InitializeComponent();
     }
 
     protected override async void OnAppearing()
     {
-        await carregarListaModelos();
-    }
-
-    private async Task carregarListaModelos()
-    {
-        List<AppVeiculos.Models.Modelo> tmp = await App.Db.GetAllModelo();
-
-        lista.Clear();
-
-        foreach (AppVeiculos.Models.Modelo modelo in tmp)
-        {
-            lista.Add(modelo);
-        }
+        base.OnAppearing();
+        await CarregarModelosNoContainer(string.Empty);
     }
 
     private async void btnAddModeloOnClicked(object sender, EventArgs e)
     {
-        AppVeiculos.Models.Modelo mod = new AppVeiculos.Models.Modelo();
-        mod.modNome = etrModelo.Text;
-        mod.modObs = edtOBSModelo.Text;
-
-        await App.Db.InsertModelo(mod);
-        await DisplayAlert("Sucesso!", "Modelo adicionado.", "OK");
-
-        OnAppearing();
+        await Navigation.PushAsync(new AddModelo());
     }
 
-    private async void btnAlterar(object sender, EventArgs e)
+    private async Task CarregarModelosNoContainer(string searchTerm = "")
     {
-        MenuItem? selecionado = sender as MenuItem;
-#pragma warning disable CS8602 // Desreferência de uma referência possivelmente nula.
-        AppVeiculos.Models.Modelo? p = selecionado.BindingContext as AppVeiculos.Models.Modelo;
-#pragma warning restore CS8602 // Desreferência de uma referência possivelmente nula.
-
-
-        await Navigation.PushAsync(page: new EditModelo { BindingContext = p });
-    }
-
-    private void listModelosItemSelected(object sender, SelectedItemChangedEventArgs e)
-    {
-        AppVeiculos.Models.Modelo? p = e.SelectedItem as AppVeiculos.Models.Modelo;
-
-        p.modId.ToString();
-        etrModelo.Text = p.modNome.ToString();
-        edtOBSModelo.Text = p.modObs.ToString();
-    }
-
-
-    private async void btnRemover(object sender, EventArgs e)
-    {
-        MenuItem? selecionado = sender as MenuItem;
-#pragma warning disable CS8602 // Desreferência de uma referência possivelmente nula.
-        AppVeiculos.Models.Modelo? p = selecionado.BindingContext as AppVeiculos.Models.Modelo;
-#pragma warning restore CS8602 // Desreferência de uma referência possivelmente nula.
-
-        bool confirma = await DisplayAlert("Atenção", "Confirma a remoção?", "Sim", "Não");
-
-        if (confirma == true)
+        if (cardsContainer == null)
         {
-            await App.Db.DeleteModelo(p.modId);
-            await DisplayAlert("Excluído", "O modelo foi deletado!", "Ok");
+            Console.WriteLine("ERRO: cardsContainer é nulo. XAML pode não ter sido inicializado.");
+            return;
+        }
 
-            await carregarListaModelos();
-        } 
-    }
+        cardsContainer.Children.Clear();
 
-    private void btnLimparOnClicked(object sender, EventArgs e)
-    {
-        etrModelo.Text = String.Empty;
-        edtOBSModelo.Text = String.Empty;
+        List<AppVeiculos.Models.Modelo> modelos;
+
+        if (string.IsNullOrWhiteSpace(searchTerm))
+        {
+            modelos = await App.Db.GetAllModelo();
+        }
+        else
+        {
+            modelos = await App.Db.SearchModelo(searchTerm);
+        }
+
+        if (modelos != null && modelos.Any())
+        {
+            foreach (var mod in modelos)
+            {
+                var frame = new Frame
+                {
+                    BackgroundColor = Color.FromArgb("#404040"),
+                    Padding = 10,
+                    WidthRequest = 350,
+                    CornerRadius = 10,
+                    Margin = new Thickness(10),
+                    HasShadow = true,
+                    Content = new Grid
+                    {
+                        ColumnDefinitions =
+                        {
+                            new ColumnDefinition { Width = GridLength.Auto },
+                            new ColumnDefinition { Width = GridLength.Star }
+                        },
+                        RowDefinitions =
+                        {
+                            new RowDefinition { Height = GridLength.Auto },
+                            new RowDefinition { Height = GridLength.Auto },
+                            new RowDefinition { Height = GridLength.Auto },
+                            new RowDefinition { Height = GridLength.Auto }
+                        }
+                    }
+                };
+
+                var gridContent = (Grid)frame.Content;
+
+                var image = new Image
+                {
+                    Source = "registcert.png",
+                    Aspect = Aspect.AspectFit,
+                    HeightRequest = 100,
+                    WidthRequest = 100,
+                    Margin = new Thickness(0, 0, 10, 0),
+                    VerticalOptions = LayoutOptions.Start,
+                    HorizontalOptions = LayoutOptions.Start,
+                };
+                gridContent.Children.Add(image);
+
+
+                var labelId = new Label
+                {
+                    Text = $"ID: {mod.modId}",
+                    TextColor = Colors.White,
+                    FontSize = 14,
+                    FontAttributes = FontAttributes.Bold,
+                    VerticalOptions = LayoutOptions.Center,
+                };
+                Grid.SetColumn(labelId, 1);
+                Grid.SetRow(labelId, 0);
+                gridContent.Children.Add(labelId);
+
+
+                var labelModelo = new Label
+                {
+                    Text = $"Modelo: {mod.modNome}",
+                    TextColor = Colors.White,
+                    FontAttributes = FontAttributes.Bold,
+                    FontSize = 14,
+                    VerticalOptions = LayoutOptions.Center,
+                };
+                Grid.SetColumn(labelModelo, 1);
+                Grid.SetRow(labelModelo, 1);
+                gridContent.Children.Add(labelModelo);
+
+
+                var labelObs = new Label
+                {
+                    Text = $"Obs: {mod.modObs}",
+                    TextColor = Colors.White,
+                    FontAttributes = FontAttributes.Bold,
+                    FontSize = 14,
+                    LineBreakMode = LineBreakMode.WordWrap,
+                    VerticalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.Fill,
+                };
+                Grid.SetColumn(labelObs, 1);
+                Grid.SetRow(labelObs, 2);
+                gridContent.Children.Add(labelObs);
+
+
+                var buttonsLayout = new StackLayout
+                {
+                    Orientation = StackOrientation.Horizontal,
+                    HorizontalOptions = LayoutOptions.End,
+                    Spacing = 10,
+                    Margin = new Thickness(0, 10, 0, 0),
+                    Children =
+                    {
+                        new ImageButton
+                        {
+                            Source = "edit.png",
+                            HeightRequest = 30,
+                            WidthRequest = 30,
+                            Command = new Command(async () =>
+                            {
+                                var editModeloPage = new EditModelo();
+                                editModeloPage.BindingContext = mod;
+                                await Navigation.PushAsync(editModeloPage);
+                            })
+                        },
+                        new ImageButton
+                        {
+                            Source = "cancel.png",
+                            HeightRequest = 30,
+                            WidthRequest = 30,
+                            Command = new Command(async () =>
+                            {
+                                bool confirm = await DisplayAlert("Confirmação", $"Deseja realmente excluir o modelo '{mod.modNome}'?", "Sim", "Não");
+                                if (confirm)
+                                {
+                                    await App.Db.DeleteMarca(mod.modId);
+                                    await DisplayAlert("Excluído", "O modelo foi deletado!", "Ok");
+                                    await CarregarModelosNoContainer(SearchBarModelo.Text);
+                                }
+                            })
+                        }
+                    }
+                };
+                Grid.SetRow(buttonsLayout, 3);
+                Grid.SetColumn(buttonsLayout, 0);
+                Grid.SetColumnSpan(buttonsLayout, 2);
+                gridContent.Children.Add(buttonsLayout);
+
+                cardsContainer.Children.Add(frame);
+            }
+        }
     }
 
     private async void txtSearchTextChanged(object sender, TextChangedEventArgs e)
     {
         string q = e.NewTextValue;
-
-        lista.Clear();
-
-        List<AppVeiculos.Models.Modelo> tmp = await App.Db.SearchModelo(q);
-
-        foreach (AppVeiculos.Models.Modelo modelo in tmp)
-        {
-            lista.Add(modelo);
-        }
+        await CarregarModelosNoContainer(q);
     }
-
 }

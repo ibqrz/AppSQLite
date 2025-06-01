@@ -1,10 +1,18 @@
 using Microsoft.Maui.Controls;
 
+using AppVeiculos.Models;
+using AppVeiculos.Helpers;
+
 namespace AppVeiculos;
 
 public partial class AddMarca : ContentPage
 {
     public AddMarca()
+    {
+        InitializeComponent();   
+    }
+
+    public AddMarca(IEnumerable<Marcas> mar, object marNome)
     {
         InitializeComponent();
         btnAddMarca.Clicked += btnAddMarcaOnClicked;
@@ -12,21 +20,21 @@ public partial class AddMarca : ContentPage
 
     private async void btnAddMarcaOnClicked(object? sender, System.EventArgs e)
     {
-        string marca = etrMarca.Text;
-        string obsMarca = edtOBSMarca.Text;
+        Marcas mar = new Marcas();
+        mar.marNome = etrMarca.Text;
+        mar.marObs = edtOBSMarca.Text;
 
-        // salvar no banco de dados 
+        await App.Db.InsertMarca(mar);
+        await DisplayAlert("Sucesso!", "Marca adicionada.", "OK");
 
-        if (string.IsNullOrWhiteSpace(marca))
+        OnAppearing();
+
+        if (string.IsNullOrWhiteSpace(mar.marNome))
         {
-            await DisplayAlert("ERRO", "O campo 'Marca' precisa ser preenchido!", "Ok");
+            await DisplayAlert("ERRO", "O campo 'Marca' precisa ser preenchida!", "Ok");
             return;
         }
-        
-        await DisplayAlert("Marca Adicionada", $"Marca: {marca}\nObservações: {obsMarca}", "OK");
-        await Shell.Current.GoToAsync("//Marca");
 
-        etrMarca.Text = string.Empty;
-        edtOBSMarca.Text = string.Empty;
+        await Navigation.PopAsync();
     }
 }
