@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppVeiculos.EdtVeiculo"
-             Title="Editar Veículo">
+             Title="Veículo">
     <ScrollView>
         <VerticalStackLayout
             Spacing="30"
@@ -72,10 +72,15 @@
                     StrokeShape="RoundRectangle 10, 10, 10, 10"
                     Grid.Row="1"
                     Grid.Column="1">
-                    <Entry
-                        x:Name="etrMarca"
+                    <Picker
+                        x:Name="pkMar"
                         TextColor="White"
-                        HeightRequest="50"/>
+                        HeightRequest="50">
+                        <Picker.ItemsSource>
+                            <Array Type="{x:Type x:String}">
+                            </Array>
+                        </Picker.ItemsSource>
+                    </Picker>
                 </Border>
 
                 <Label
@@ -91,10 +96,15 @@
                     StrokeShape="RoundRectangle 10, 10, 10, 10"
                     Grid.Row="3"
                     Grid.Column="0">
-                    <Entry
-                        x:Name="etrModelo"
+                    <Picker
+                        x:Name="pkMod"
                         TextColor="White"
-                        HeightRequest="50"/>
+                        HeightRequest="50">
+                        <Picker.ItemsSource>
+                            <Array Type="{x:Type x:String}">
+                            </Array>
+                        </Picker.ItemsSource>
+                    </Picker>
                 </Border>
 
                 <Label
@@ -137,14 +147,14 @@
                 </Border>
 
                 <Button
-                    x:Name="btnEdt"
+                    x:Name="btnEditVeiculo"
                     Text="Editar"
                     BackgroundColor="Maroon"
                     TextColor="White"
                     Grid.Row="6"
                     Grid.ColumnSpan="2"
                     TranslationY="65.8"
-                    Clicked="btnEdtVeiculoOnClicked"/>
+                    Clicked="btnEditVeiculoOnClicked"/>
 
             </Grid>
         </VerticalStackLayout>

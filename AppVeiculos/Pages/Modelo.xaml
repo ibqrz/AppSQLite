@@ -8,15 +8,6 @@
         <VerticalStackLayout
             Spacing="30"
             Padding="30">
-
-            <Button
-                x:Name="btnAddModelo"
-                Text="+"
-                FontSize="20"
-                TextColor="White"
-                BackgroundColor="Maroon"
-                Clicked="btnAddModeloOnClicked"/>
-
             <Border
             StrokeShape="RoundRectangle 10, 10, 10, 10">
 
@@ -28,6 +19,15 @@
                     TextChanged="txtSearchTextChanged"/>
 
             </Border>
+
+            <Button
+                x:Name="btnAddModelo"
+                Text="+"
+                FontSize="20"
+                TextColor="White"
+                BackgroundColor="Maroon"
+                Clicked="btnAddModeloOnClicked"/>
+
 
             <FlexLayout x:Name="cardsContainer"
                         Wrap="Wrap"
