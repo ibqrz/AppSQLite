@@ -9,25 +9,6 @@
             Spacing="30"
             Padding="30">
 
-            <Border
-                StrokeShape="RoundRectangle 10, 10, 10, 10">
-                <Entry
-                    x:Name="etrModelo"
-                    Placeholder="Nome"
-                    TextColor="White"
-                    HeightRequest="50"/>
-            </Border>
-
-            <Border
-                StrokeShape="RoundRectangle 10, 10, 10, 10">
-                <Editor
-                    x:Name="edtOBSModelo"
-                    Placeholder="Observações"
-                    TextColor="White"
-                    HeightRequest="100"/>
-            </Border>
-
-            
             <Button
                 x:Name="btnAddModelo"
                 Text="+"
@@ -36,52 +17,25 @@
                 BackgroundColor="Maroon"
                 Clicked="btnAddModeloOnClicked"/>
 
-            <Button 
-                x:Name="btnLimparModelo" 
-                Text="Limpar"
-                TextColor="White"
-                BackgroundColor="Maroon"
-                Clicked="btnLimparOnClicked"/>
-
             <Border
             StrokeShape="RoundRectangle 10, 10, 10, 10">
 
                 <SearchBar
                     FlowDirection="LeftToRight"
+                    x:Name="SearchBarModelo"
                     Placeholder="Pesquisar"
                     PlaceholderColor="White"
                     TextChanged="txtSearchTextChanged"/>
 
             </Border>
 
-            <Border StrokeShape="RoundRectangle 10, 10, 10, 10">
-                <ListView x:Name="listModelos" ItemSelected="listModelosItemSelected" HasUnevenRows="True">
-                    <ListView.Header>
-                        <Grid ColumnDefinitions="*, *, *" BackgroundColor="Maroon" Padding="10">
-                            <Label Grid.Column="0" Text="ID:" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Grid.Column="1" Text="Nome" FontAttributes="Bold" HorizontalOptions="Center"/>
-                            <Label Grid.Column="2" Text="Obs:" FontAttributes="Bold" HorizontalOptions="Center"/>
-                        </Grid>
-                    </ListView.Header>
+            <FlexLayout x:Name="cardsContainer"
+                        Wrap="Wrap"
+                        JustifyContent="SpaceAround"
+                        AlignItems="Start"
+                        Direction="Row"
+                        BindableLayout.EmptyView="Nenhum modelo cadastrado."/>
 
-                    <ListView.ItemTemplate>
-                        <DataTemplate>
-                            <ViewCell>
-                                <ViewCell.ContextActions>
-                                    <MenuItem Text="Remover" Clicked="btnRemover" CommandParameter="{Binding .}"/>
-                                    <MenuItem Text="Alterar" Clicked="btnAlterar" CommandParameter="{Binding .}"/>
-                                </ViewCell.ContextActions>
-
-                                <Grid ColumnDefinitions="*, *, *" Padding="10">
-                                    <Label Grid.Column="0" Text="{Binding modId}"/>
-                                    <Label Grid.Column="1" Text="{Binding modNome}" LineBreakMode="WordWrap"/>
-                                    <Label Grid.Column="2" Text="{Binding modObs}" LineBreakMode="WordWrap"/>
-                                </Grid>
-                            </ViewCell>
-                        </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
-            </Border>
         </VerticalStackLayout>
     </ScrollView>
 </ContentPage>

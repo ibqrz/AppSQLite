@@ -8,17 +8,23 @@
             Spacing="30"
             Padding="30">
 
-            <Image
-                Source="racingcar.png"
-                HeightRequest="100"
-                WidthRequest="110"/>
-
-            <Label 
-                Text="Marca"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center"
+            <Label
+                x:Name="lblIdMarca"
+                Text="ID"
+                TextColor="White"
                 FontSize="18"
-                TextColor="White"/>
+                TranslationY="30"
+                FontFamily=""/>
+            <Border 
+                StrokeShape="RoundRectangle 10, 10, 10, 10">
+                <Entry
+                x:Name="etrIdMarca"
+                IsEnabled="False"
+                TextColor="White"
+                Text="{Binding marId}"
+                BackgroundColor="Transparent"
+                HeightRequest="50"/>
+            </Border>
 
             <Label
                 x:Name="lblMarca"
@@ -31,6 +37,8 @@
                 StrokeShape="RoundRectangle 10, 10, 10, 10">
                 <Entry
                 x:Name="etrMarca"
+                IsEnabled="True"
+                Text="{Binding marNome}"
                 BackgroundColor="Transparent"
                 HeightRequest="50"/>
             </Border>
@@ -46,18 +54,20 @@
                 StrokeShape="RoundRectangle 10, 10, 10, 10">
                 <Editor
                 x:Name="edtOBSMarca"
+                IsEnabled="True"
                 TextColor="White"
+                Text="{Binding marObs}"
                 BackgroundColor="Transparent"
                 HeightRequest="100"/>
             </Border>
 
             <Button
-                x:Name="btnAddMarca"
+                x:Name="btnEdtMarca"
                 Text="Editar"
                 TextColor="White"
                 BackgroundColor="Maroon"
                 Clicked="btnEdtMarcaOnClicked"
-                TranslationY="105"/>
+                TranslationY="150"/>
 
         </VerticalStackLayout>
     </ScrollView>

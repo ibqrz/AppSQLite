@@ -1,28 +1,46 @@
+using Microsoft.Maui.Controls;
+using AppVeiculos.Models; 
+using AppVeiculos.Helpers; 
+
 namespace AppVeiculos;
 
 public partial class EditMarca : ContentPage
 {
-	public EditMarca()
-	{
-		InitializeComponent();
-	}
-
-    private async void btnEdtMarcaOnClicked(object? sender, System.EventArgs e)
+    public EditMarca()
     {
-        string marca = etrMarca.Text;
-        string obsMarca = edtOBSMarca.Text;
+        InitializeComponent();
+    }
 
-        // salvar no banco de dados 
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
 
-        if (string.IsNullOrWhiteSpace(marca))
+        if (BindingContext is Marcas marcaParaEditar)
         {
-            await DisplayAlert("ERRO", "O campo 'Marca' precisa ser preenchido!", "Ok");
-            return;
+            etrMarca.Text = marcaParaEditar.marNome;
+            edtOBSMarca.Text = marcaParaEditar.marObs;
         }
+        else
+        {
+            await DisplayAlert("Erro", "Não foi possível carregar a marca para edição.", "OK");
+        }
+    }
 
-        await DisplayAlert("Marca Adicionada", $"Marca: {marca}\nObservações: {obsMarca}", "OK");
+    private async void btnEdtMarcaOnClicked(object? sender, EventArgs e)
+    {
+        if (BindingContext is Marcas marcaParaAtualizar)
+        {
+            marcaParaAtualizar.marNome = etrMarca.Text;
+            marcaParaAtualizar.marObs = edtOBSMarca.Text;
 
-        etrMarca.Text = string.Empty;
-        edtOBSMarca.Text = string.Empty;
+            await App.Db.UpdateMarca(marcaParaAtualizar);
+            await DisplayAlert("Atenção", "Marca editada!", "Ok");
+
+            await Navigation.PopAsync();
+        }
+        else
+        {
+            await DisplayAlert("Erro", "Nenhuma marca válida para atualizar.", "OK");
+        }
     }
 }
