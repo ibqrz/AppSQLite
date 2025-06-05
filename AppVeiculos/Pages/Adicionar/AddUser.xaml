@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppVeiculos.AddUser"
-             Title="AddUser">
+             Title="Usuário">
     <ScrollView>
         <VerticalStackLayout
             Spacing="30"
@@ -14,7 +14,7 @@
                 WidthRequest="110"/>
 
             <Label 
-                Text="Usuario"
+                Text="Usuário"
                 VerticalOptions="Center" 
                 HorizontalOptions="Center"
                 FontSize="18"

@@ -162,7 +162,7 @@ public partial class Modelo : ContentPage
                                 bool confirm = await DisplayAlert("Confirmação", $"Deseja realmente excluir o modelo '{mod.modNome}'?", "Sim", "Não");
                                 if (confirm)
                                 {
-                                    await App.Db.DeleteMarca(mod.modId);
+                                    await App.Db.DeleteModelo(mod.modId);
                                     await DisplayAlert("Excluído", "O modelo foi deletado!", "Ok");
                                     await CarregarModelosNoContainer(SearchBarModelo.Text);
                                 }

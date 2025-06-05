@@ -21,7 +21,7 @@ public partial class AddUser : ContentPage
         user.userSenha = etrSenha.Text;
 
         await App.Db.InsertUsuario(user);
-        await DisplayAlert("Sucesso!", "Usuario adicionado.", "OK");
+        await DisplayAlert("Sucesso!", "Usuário adicionado.", "OK");
 
         OnAppearing();
 
