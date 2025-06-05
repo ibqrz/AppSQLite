@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppVeiculos.Usuarios"
+             Title="Usuarios">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="30"
+            Padding="30">
+
+            <Border
+            StrokeShape="RoundRectangle 10, 10, 10, 10">
+
+                <SearchBar
+                    x:Name="SearchBarUsuario"
+                    FlowDirection="LeftToRight"
+                    Placeholder="Pesquisar"
+                    PlaceholderColor="White"
+                    TextChanged="txtSearchTextChanged"/>
+
+            </Border>
+
+            <Button
+                x:Name="btnAddUsuario"
+                Text="+"
+                FontSize="20"
+                TextColor="White"
+                BackgroundColor="Maroon"
+                Clicked="btnAddUsuarioOnClicked"/>
+
+            <FlexLayout x:Name="cardsContainer"
+                        Wrap="Wrap"
+                        JustifyContent="SpaceAround"
+                        AlignItems="Start"
+                        Direction="Row"
+                        BindableLayout.EmptyView="Nenhum usuário cadastrado."/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

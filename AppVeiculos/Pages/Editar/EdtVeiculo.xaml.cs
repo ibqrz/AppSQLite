@@ -9,8 +9,8 @@ namespace AppVeiculos;
 
 public partial class EdtVeiculo : ContentPage
 {
-    private List<Marcas> _marcas = new List<Marcas>();
-    private List<AppVeiculos.Models.Modelo> _modelos = new List<AppVeiculos.Models.Modelo>();
+    private List<Marcas>? _marcas = new List<Marcas>();
+    private List<AppVeiculos.Models.Modelo>? _modelos = new List<AppVeiculos.Models.Modelo>();
 
     public EdtVeiculo()
     {
