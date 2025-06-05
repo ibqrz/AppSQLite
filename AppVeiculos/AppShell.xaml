@@ -63,16 +63,10 @@
             Route="Modelo"/>
 
         <ShellContent
-            Title="Usuario"
-            Icon="imguser.png"
-            ContentTemplate="{DataTemplate local:Usuarios}"
-            Route="Usuario"/>
-
-        <ShellContent
-            Title="Cadastro"
+            Title="Usuário"
             Icon="capacete2.png"
-            ContentTemplate="{DataTemplate local:Cadastro}"
-            Route="Cadastro"/>
+            ContentTemplate="{DataTemplate local:Usuarios}"
+            Route="Usuário"/>
 
     </FlyoutItem>
 

@@ -73,13 +73,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <Compile Update="Cadastro.xaml.cs">
+	  <Compile Update="Pages\Cadastro.xaml.cs">
 	    <DependentUpon>Cadastro.xaml</DependentUpon>
 	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AddUser.xaml">
+	  <MauiXaml Update="Pages\Adicionar\AddUser.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="EditMarca.xaml">
@@ -106,7 +106,7 @@
 	  <MauiXaml Update="Adicionar.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Cadastro.xaml">
+	  <MauiXaml Update="Pages\Cadastro.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Marca.xaml">
@@ -115,7 +115,7 @@
 	  <MauiXaml Update="Pages\Modelo.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Usuarios.xaml">
+	  <MauiXaml Update="Pages\Usuarios.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Veiculos.xaml">
