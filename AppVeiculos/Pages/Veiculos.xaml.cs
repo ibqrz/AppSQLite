@@ -3,7 +3,6 @@ using AppVeiculos.Models;
 using Microsoft.Maui.Controls;
 using SQLite;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -11,8 +10,8 @@ namespace AppVeiculos;
 
 public partial class Veiculos : ContentPage
 {
-    private List<Marcas> _marcas;
-    private List<AppVeiculos.Models.Modelo> _modelos;
+    private List<Marcas> ? _marcas;
+    private List<AppVeiculos.Models.Modelo> ? _modelos;
 
     public Veiculos()
     {
@@ -22,16 +21,37 @@ public partial class Veiculos : ContentPage
     protected override async void OnAppearing()
     {
         base.OnAppearing();
+        await LoadReferencedData();
         await CarregarVeiculoNoContainer(string.Empty);
+    }
+
+    private async Task LoadReferencedData()
+    {
+        if (App.Db == null)
+        {
+            Console.WriteLine("ERRO: App.Db não foi inicializado. Certifique-se de que seu App.xaml.cs inicializa o banco de dados.");
+            return;
+        }
+
+        try
+        {
+            _marcas = await App.Db.GetAllMarca();
+            _modelos = await App.Db.GetAllModelo();
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Erro ao carregar dados de referência: {ex.Message}");
+            await DisplayAlert("Erro", "Não foi possível carregar as marcas e modelos. Tente novamente.", "Ok");
+        }
     }
 
     private async void btnAddVeiculoOnClicked(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new AddVeiculo()); 
+        await Navigation.PushAsync(new AddVeiculo());
     }
+
     private async Task CarregarVeiculoNoContainer(string searchTerm = "")
     {
-
         if (cardsContainer == null)
         {
             Console.WriteLine("ERRO: cardsContainer é nulo. XAML pode não ter sido inicializado.");
@@ -102,7 +122,7 @@ public partial class Veiculos : ContentPage
 
 
                 var labelId = new Label
-                { 
+                {
                     Text = $"ID: {vei.veiId}",
                     TextColor = Colors.White,
                     FontSize = 14,
@@ -138,7 +158,6 @@ public partial class Veiculos : ContentPage
                 Grid.SetColumn(labelAnoFab, 1);
                 Grid.SetRow(labelAnoFab, 2);
                 gridContent.Children.Add(labelAnoFab);
-
 
                 var marcaAssociada = _marcas?.FirstOrDefault(m => m.marId == vei.codMar);
                 var modeloAssociado = _modelos?.FirstOrDefault(m => m.modId == vei.codMod);
